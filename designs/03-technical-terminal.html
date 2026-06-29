@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lee Ying Sheng — Technical / Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E14; --panel:#11151E; --ink:#C9D1D9; --bright:#F0F6FC; --muted:#7D8590;
+    --line:#21262D; --accent:#3FB950; --blue:#58A6FF; --amber:#E3B341;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:26px 26px;background-attachment:fixed;
+  }
+  .mono{font-family:'JetBrains Mono',monospace}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+  section{padding:90px 0}
+  .bright{color:var(--bright)}
+  .cmt{color:var(--muted)}.cmt::before{content:"// "}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,14,20,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  nav .name{font-family:'JetBrains Mono';font-weight:700;font-size:15px;color:var(--bright)}
+  nav .name b{color:var(--accent)}
+  nav .links{display:flex;gap:22px;font-family:'JetBrains Mono';font-size:13px;color:var(--muted)}
+  nav .links a::before{content:"#";color:var(--accent)}
+  nav .links a:hover{color:var(--bright)}
+  @media(max-width:720px){nav .links{display:none}}
+
+  .hero{padding:110px 0 90px}
+  .term{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:760px}
+  .term .bar{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--line);background:#0d1117}
+  .term .bar i{width:12px;height:12px;border-radius:50%;display:inline-block}
+  .term .bar .r{background:#ff5f56}.term .bar .y{background:#ffbd2e}.term .bar .g{background:#27c93f}
+  .term .bar span{margin-left:8px;font-family:'JetBrains Mono';font-size:12px;color:var(--muted)}
+  .term .body{padding:26px 24px}
+  .term .line{font-family:'JetBrains Mono';font-size:14px;margin-bottom:6px}
+  .term .prompt{color:var(--accent)}.term .prompt::before{content:"$ ";color:var(--blue)}
+  .term .out{color:var(--muted);margin-bottom:6px}
+  .hero h1{font-family:'JetBrains Mono';font-size:clamp(34px,6vw,60px);font-weight:700;color:var(--bright);letter-spacing:-.02em;margin:26px 0 14px;line-height:1.05}
+  .hero h1 .c{color:var(--accent)}
+  .hero .role{font-family:'JetBrains Mono';color:var(--blue);font-size:16px;margin-bottom:18px}
+  .hero p{color:var(--ink);max-width:62ch;margin-bottom:30px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{font-family:'JetBrains Mono';display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:7px;font-size:14px;font-weight:500;border:1px solid var(--line);transition:.18s}
+  .btn-p{background:var(--accent);color:#04130a;border-color:var(--accent)}
+  .btn-p:hover{box-shadow:0 0 0 3px rgba(63,185,80,.25)}
+  .btn-s{background:var(--panel);color:var(--ink)}
+  .btn-s:hover{border-color:var(--accent);color:var(--bright)}
+
+  .sec-head{margin-bottom:44px;border-bottom:1px solid var(--line);padding-bottom:16px}
+  .sec-head .k{font-family:'JetBrains Mono';font-size:13px;color:var(--accent);margin-bottom:6px}
+  .sec-head h2{font-family:'JetBrains Mono';font-size:28px;color:var(--bright);font-weight:700}
+  .sec-head h2 .b{color:var(--muted);font-weight:400}
+
+  .proj{display:grid;gap:22px}
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:.2s;display:grid;grid-template-columns:300px 1fr}
+  .pcard:hover{border-color:var(--accent)}
+  .pcard .img{border-right:1px solid var(--line);background:#0d1117;min-height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .pcard .img img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .ph{display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;color:var(--muted);font-family:'JetBrains Mono';font-size:12px;text-align:center;padding:20px;width:100%;height:100%;background:linear-gradient(135deg,#0d1117,#11151e)}
+  .ph .ic{font-size:30px}
+  .pbody{padding:26px}
+  .pbody .top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+  .ptag{font-family:'JetBrains Mono';font-size:12px;color:var(--accent);border:1px solid var(--line);border-radius:5px;padding:3px 9px}
+  .when{font-family:'JetBrains Mono';font-size:12px;color:var(--muted)}
+  .pbody h3{font-family:'JetBrains Mono';font-size:19px;color:var(--bright);font-weight:500;margin-bottom:12px}
+  .pbody p{color:var(--ink);font-size:15px;margin-bottom:16px}
+  .pbody .go{font-family:'JetBrains Mono';font-size:13px;color:var(--blue)}
+  .pbody .go::before{content:"→ "}
+  .pbody .go:hover{color:var(--accent)}
+  @media(max-width:680px){.pcard{grid-template-columns:1fr}.pcard .img{border-right:none;border-bottom:1px solid var(--line);min-height:170px}}
+
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .quote{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px}
+  .quote .tag{font-family:'JetBrains Mono';font-size:12px;color:var(--amber);margin-bottom:14px}
+  .quote blockquote{font-size:16px;color:var(--ink);margin-bottom:18px;border-left:2px solid var(--accent);padding-left:16px}
+  .quote .who{font-family:'JetBrains Mono';color:var(--bright);font-weight:500;font-size:14px}
+  .quote .role{font-family:'JetBrains Mono';color:var(--muted);font-size:12px}
+  .pending{display:inline-block;margin-top:10px;font-family:'JetBrains Mono';font-size:11px;color:var(--amber);border:1px dashed var(--line);border-radius:5px;padding:2px 8px}
+  @media(max-width:680px){.quotes{grid-template-columns:1fr}}
+
+  .award{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:32px;display:flex;gap:22px;align-items:flex-start}
+  .award .t{font-size:36px}
+  .award h3{font-family:'JetBrains Mono';font-size:19px;color:var(--bright);font-weight:500;margin-bottom:10px}
+  .award p{color:var(--ink);max-width:62ch;font-size:15px}
+  .award .yr{margin-left:auto;font-family:'JetBrains Mono';font-size:12px;color:var(--muted);white-space:nowrap}
+  @media(max-width:680px){.award{flex-direction:column;padding:24px}.award .yr{margin-left:0}}
+
+  .edu{display:grid;gap:14px}
+  .erow{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 26px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  .erow h3{font-family:'JetBrains Mono';font-size:17px;color:var(--bright);font-weight:500;margin-bottom:5px}
+  .erow p{color:var(--muted);font-size:14px}
+  .erow .yr{font-family:'JetBrains Mono';font-size:13px;color:var(--accent);white-space:nowrap}
+  @media(max-width:680px){.erow{flex-direction:column;align-items:flex-start}}
+
+  .contact{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:48px;text-align:center}
+  .contact .k{font-family:'JetBrains Mono';color:var(--accent);font-size:13px;margin-bottom:14px}
+  .contact h2{font-family:'JetBrains Mono';font-size:clamp(28px,4vw,42px);color:var(--bright);font-weight:700;margin-bottom:30px}
+  .contact h2 .c{color:var(--accent)}
+  .channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:740px;margin:0 auto;text-align:left}
+  .chip{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-family:'JetBrains Mono';font-size:13px;transition:.18s}
+  .chip:hover{border-color:var(--accent);color:var(--bright)}
+  .chip .lbl{color:var(--muted);min-width:62px}
+  .chip .val{color:var(--ink)}
+  footer{padding:46px 0;text-align:center;color:var(--muted);font-family:'JetBrains Mono';font-size:12px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="name">lee_ying_sheng<b>.dev</b></div>
+  <div class="links">
+    <a href="#projects">projects</a>
+    <a href="#testimonials">testimonials</a>
+    <a href="#awards">awards</a>
+    <a href="#education">education</a>
+    <a href="#contact">contact</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="term">
+    <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>~/lee-ying-sheng — zsh</span></div>
+    <div class="body">
+      <div class="line"><span class="prompt">whoami</span></div>
+      <div class="out">Electrical &amp; Computer Engineering @ Shanghai Jiao Tong University</div>
+      <div class="line"><span class="prompt">cat ./focus.txt</span></div>
+      <div class="out">platforms · hardware · AI — research to shipped product</div>
+      <h1 class="mono">Lee Ying Sheng<span class="c">_</span></h1>
+      <div class="role mono">→ builder · team lead · aspiring PM</div>
+      <p>I lead cross-functional teams across software, hardware, and research — finding real user pain points and validating ideas before writing a single line of code.</p>
+      <div class="btns">
+        <a class="btn btn-p" href="../General%20Tech%20Resume%20(English).pdf" download>↓ tech_resume.pdf</a>
+        <a class="btn btn-s" href="../Product%20Managment%20Resume%20(English)%20(New).pdf" download>↓ non_technical_resume.pdf</a>
+      </div>
+    </div>
+  </div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+  <div class="sec-head"><div class="k">~/projects</div><h2 class="mono">Featured Projects <span class="b">— 3 repos</span></h2></div>
+  <div class="proj">
+
+    <div class="pcard">
+      <div class="img"><img src="../laowaicentral.png" alt="LaowaiCentral screenshot"></div>
+      <div class="pbody">
+        <div class="top"><span class="ptag">co-founder</span><span class="when">04/26 – present</span></div>
+        <h3>LaowaiCentral — SJTU International Events Platform</h3>
+        <p>Aggregation engine pulling event data from 50+ WeChat Official Accounts; LLM-powered spam filtering, categorization, and multilingual summaries; newsletter via Aliyun Direct Mail; built-in analytics for retention, CTR, and conversions.</p>
+        <a class="go mono" href="https://laowaicentral.com" target="_blank">laowaicentral.com</a>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="img"><div class="ph"><span class="ic">🔋</span>[ concept_diagram.png ]<br>pending</div></div>
+      <div class="pbody">
+        <div class="top"><span class="ptag">team lead</span><span class="when">05/26 – present</span></div>
+        <h3>Disposal of Electronic Cigarettes — Zhejiang Huayou Cobalt</h3>
+        <p>Leading a 5-person research team building a safer, more efficient e-cigarette disposal system. Aligned requirements with Huayou stakeholders, prioritized a feasibility report and implementation plan, validating detection &amp; dismantling via prototyping.</p>
+        <span class="go mono">research · hardware</span>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="img"><div class="ph"><span class="ic">🧠</span>[ clip_pipeline.svg ]<br>pending</div></div>
+      <div class="pbody">
+        <div class="top"><span class="ptag">researcher</span><span class="when">CV final project</span></div>
+        <h3>Quantization-Aware Compression of Vision-Language Models</h3>
+        <p>Compressed CLIP (150M params) for edge deployment via 8-bit/4-bit post-training quantization, per-layer sensitivity analysis, and a mixed-precision strategy — ~4–8× smaller at minimal accuracy loss. Benchmarked on CIFAR-100 &amp; Flickr30k.</p>
+        <span class="go mono">computer vision · SJTU</span>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<section id="testimonials"><div class="wrap">
+  <div class="sec-head"><div class="k">~/testimonials</div><h2 class="mono">References <span class="b">— peer review</span></h2></div>
+  <div class="quotes">
+    <div class="quote">
+      <div class="tag mono">/* faculty */</div>
+      <blockquote>A placeholder quote highlighting Ying Sheng's rigor, initiative, and how he raises the standard of everyone around him.</blockquote>
+      <div class="who">Prof. Milias</div>
+      <div class="role">Shanghai Jiao Tong University</div>
+      <span class="pending">quote pending</span>
+    </div>
+    <div class="quote">
+      <div class="tag mono">/* faculty */</div>
+      <blockquote>A placeholder quote on his teaching contribution and leadership across courses and student competitions.</blockquote>
+      <div class="who">Prof. He Yulian (何玉莲)</div>
+      <div class="role">Shanghai Jiao Tong University</div>
+      <span class="pending">quote pending</span>
+    </div>
+  </div>
+</div></section>
+
+<section id="awards"><div class="wrap">
+  <div class="sec-head"><div class="k">~/awards</div><h2 class="mono">Recognition</h2></div>
+  <div class="award">
+    <div class="t">🏆</div>
+    <div>
+      <h3>1st Prize — China's 13th National Marine Vehicle Design Competition</h3>
+      <p>Led design of an amphibious tracked vehicle for cave exploration and flood rescue — top among 230 regional champions, with 3 working prototypes delivered.</p>
+    </div>
+    <div class="yr">09/23 – 08/24</div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="sec-head"><div class="k">~/education</div><h2 class="mono">Education</h2></div>
+  <div class="edu">
+    <div class="erow">
+      <div><h3>Shanghai Jiao Tong University</h3><p>B.S. Electrical &amp; Computer Engineering · Minor in Data Science · Shanghai, China</p></div>
+      <div class="yr">09/22 – present</div>
+    </div>
+    <div class="erow">
+      <div><h3>Nanyang Technological University</h3><p>Electrical &amp; Computer Engineering · Student Exchange Program · Singapore</p></div>
+      <div class="yr">08/22 – 12/22</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div class="k">~/contact</div>
+    <h2 class="mono">$ ./get_in_touch<span class="c">_</span></h2>
+    <div class="channels">
+      <a class="chip" href="https://github.com/yslee1106" target="_blank"><span class="lbl">github</span><span class="val">/yslee1106</span></a>
+      <a class="chip" href="https://linkedin.com/in/leeyingsheng" target="_blank"><span class="lbl">linkedin</span><span class="val">/leeyingsheng</span></a>
+      <a class="chip" href="mailto:yslee040611@gmail.com"><span class="lbl">email</span><span class="val">yslee040611@gmail.com</span></a>
+      <a class="chip" href="tel:+8615000967750"><span class="lbl">phone</span><span class="val">+86 15000967750</span></a>
+      <span class="chip"><span class="lbl">wechat</span><span class="val">id / qr pending</span></span>
+    </div>
+  </div>
+</div></section>
+
+<footer>// © 2026 lee_ying_sheng · technical-terminal mockup</footer>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lee Ying Sheng — Modern Bold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0E12; --panel:#16161D; --ink:#FFFFFF; --muted:#A0A0AE;
+    --line:#26262F; --accent:#7C5CFC; --accent2:#FF5C8A; --grad:linear-gradient(120deg,#7C5CFC,#FF5C8A);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .display{font-family:'Space Grotesk',sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+  section{padding:110px 0}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(14,14,18,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:70px}
+  nav .name{font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.02em}
+  nav .name span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  nav .links{display:flex;gap:30px;font-size:14px;color:var(--muted);font-weight:500}
+  nav .links a:hover{color:var(--ink)}
+  @media(max-width:720px){nav .links{display:none}}
+
+  .hero{position:relative;padding:150px 0 120px;text-align:center}
+  .hero .glow{position:absolute;inset:0;background:radial-gradient(600px 320px at 50% 0%,rgba(124,92,252,.28),transparent 70%);pointer-events:none}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--muted);font-weight:500;margin-bottom:32px;background:var(--panel)}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:#3DD68C;box-shadow:0 0 10px #3DD68C}
+  .hero h1{font-family:'Space Grotesk';font-size:clamp(52px,9vw,108px);font-weight:700;line-height:.95;letter-spacing:-.04em;margin-bottom:26px}
+  .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{font-size:21px;color:var(--muted);max-width:60ch;margin:0 auto 40px}
+  .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:14px;font-weight:600;font-size:15px;transition:.22s}
+  .btn-grad{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(124,92,252,.4)}
+  .btn-grad:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(124,92,252,.55)}
+  .btn-out{border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+  .btn-out:hover{border-color:var(--accent);transform:translateY(-3px)}
+
+  .sec-head{margin-bottom:56px}
+  .sec-head .kicker{font-family:'Space Grotesk';font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+  .sec-head h2{font-family:'Space Grotesk';font-size:clamp(34px,5vw,52px);font-weight:700;letter-spacing:-.03em}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .pcard{grid-column:span 1;background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+  .pcard.wide{grid-column:span 2}
+  .pcard:hover{transform:translateY(-6px);border-color:var(--accent)}
+  .pcard .img{aspect-ratio:16/9;overflow:hidden;background:#0a0a0e;position:relative}
+  .pcard.wide .img{aspect-ratio:21/8}
+  .pcard .img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:.4s}
+  .pcard:hover .img img{transform:scale(1.04)}
+  .ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:14px;background:radial-gradient(circle at 30% 30%,rgba(124,92,252,.18),transparent 60%),radial-gradient(circle at 70% 70%,rgba(255,92,138,.16),transparent 60%)}
+  .ph .ic{font-size:34px}
+  .pbody{padding:28px 28px 30px;flex:1;display:flex;flex-direction:column}
+  .ptag{display:inline-flex;align-self:flex-start;gap:8px;font-size:12px;font-weight:600;color:var(--accent);background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.3);padding:5px 12px;border-radius:999px;margin-bottom:16px}
+  .pbody h3{font-family:'Space Grotesk';font-size:23px;font-weight:600;letter-spacing:-.02em;margin-bottom:12px;line-height:1.2}
+  .pbody p{color:var(--muted);font-size:15px;margin-bottom:18px}
+  .pbody .go{margin-top:auto;font-weight:600;font-size:14px;color:var(--ink);display:inline-flex;gap:7px;align-items:center}
+  .pbody .go:hover{color:var(--accent)}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.pcard,.pcard.wide{grid-column:span 1}}
+
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .quote{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:36px;position:relative}
+  .quote::before{content:"";position:absolute;left:0;top:28px;bottom:28px;width:4px;border-radius:4px;background:var(--grad)}
+  .quote blockquote{font-size:19px;font-weight:500;margin:0 0 22px 18px;line-height:1.5}
+  .quote .who{margin-left:18px;font-family:'Space Grotesk';font-weight:600}
+  .quote .role{margin-left:18px;color:var(--muted);font-size:14px}
+  .pending{display:inline-block;margin:8px 0 0 18px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent2);border:1px dashed rgba(255,92,138,.4);border-radius:99px;padding:3px 10px}
+  @media(max-width:720px){.quotes{grid-template-columns:1fr}}
+
+  .award{border-radius:24px;padding:2px;background:var(--grad)}
+  .award .inner{background:var(--panel);border-radius:22px;padding:48px;display:flex;gap:28px;align-items:center}
+  .award .t{font-size:54px}
+  .award h3{font-family:'Space Grotesk';font-size:26px;font-weight:600;margin-bottom:10px}
+  .award p{color:var(--muted);max-width:62ch}
+  .award .yr{margin-left:auto;font-family:'Space Grotesk';font-weight:600;color:var(--muted);white-space:nowrap}
+  @media(max-width:720px){.award .inner{flex-direction:column;text-align:center;padding:34px}.award .yr{margin-left:0}}
+
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ecard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px}
+  .ecard .yr{font-family:'Space Grotesk';font-size:13px;font-weight:600;color:var(--accent);margin-bottom:14px}
+  .ecard h3{font-family:'Space Grotesk';font-size:22px;font-weight:600;margin-bottom:8px}
+  .ecard p{color:var(--muted);font-size:15px}
+  @media(max-width:720px){.edu{grid-template-columns:1fr}}
+
+  .contact{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:72px 32px;position:relative;overflow:hidden}
+  .contact .glow{position:absolute;inset:0;background:radial-gradient(500px 260px at 50% 120%,rgba(255,92,138,.25),transparent 70%)}
+  .contact h2{font-family:'Space Grotesk';font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-.03em;margin-bottom:16px;position:relative}
+  .contact .sub{color:var(--muted);font-size:18px;margin-bottom:38px;position:relative}
+  .channels{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;position:relative}
+  .chip{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg);font-size:15px;font-weight:500;transition:.2s}
+  .chip:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .chip b{font-family:'Space Grotesk'}
+  footer{padding:50px 0;text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="name">LYS<span>.</span></div>
+  <div class="links">
+    <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#awards">Awards</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span> Available for product &amp; engineering roles</div>
+    <h1 class="display">Lee Ying Sheng<br><span class="g">builds the future.</span></h1>
+    <p>ECE @ Shanghai Jiao Tong University. I lead cross-functional teams across platforms, hardware, and AI — finding real pain points and validating ideas before building.</p>
+    <div class="btns">
+      <a class="btn btn-grad" href="../General%20Tech%20Resume%20(English).pdf" download>↓ Tech Resume</a>
+      <a class="btn btn-out" href="../Product%20Managment%20Resume%20(English)%20(New).pdf" download>↓ Non-technical Resume</a>
+    </div>
+  </div>
+</header>
+
+<section id="projects"><div class="wrap">
+  <div class="sec-head"><div class="kicker">Featured Work</div><h2 class="display">Things I've built.</h2></div>
+  <div class="grid">
+
+    <div class="pcard wide">
+      <div class="img"><img src="../laowaicentral_landing.png" alt="LaowaiCentral landing page"></div>
+      <div class="pbody">
+        <span class="ptag">● Co-founder · 04/26 – Present</span>
+        <h3>LaowaiCentral — SJTU International Events Platform</h3>
+        <p>An aggregation engine pulling event data from 50+ WeChat Official Accounts, with LLM-powered spam filtering, categorization, and multilingual summaries. Ships a newsletter via Aliyun Direct Mail and a built-in analytics suite tracking retention, CTR, and conversions.</p>
+        <a class="go" href="https://laowaicentral.com" target="_blank">Visit laowaicentral.com →</a>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="img"><div class="ph"><span class="ic">🔋</span>Concept diagram pending</div></div>
+      <div class="pbody">
+        <span class="ptag">● Team Leader · 05/26 – Present</span>
+        <h3>Disposal of Electronic Cigarettes</h3>
+        <p>Leading a 5-person research team building a safer, more efficient e-cigarette disposal system for Zhejiang Huayou Cobalt — aligning stakeholders, prioritizing a feasibility report, and validating detection &amp; dismantling via prototyping.</p>
+        <span class="go">Zhejiang Huayou Cobalt</span>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="img"><div class="ph"><span class="ic">🧠</span>CLIP pipeline figure pending</div></div>
+      <div class="pbody">
+        <span class="ptag">● Researcher · CV Final Project</span>
+        <h3>Quantization-Aware Compression of VLMs</h3>
+        <p>Compressed CLIP (150M params) for edge deployment via 8-bit and 4-bit post-training quantization, per-layer sensitivity analysis, and a mixed-precision strategy — ~4–8× smaller at minimal accuracy loss. Benchmarked on CIFAR-100 &amp; Flickr30k.</p>
+        <span class="go">Computer Vision · SJTU</span>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<section id="testimonials"><div class="wrap">
+  <div class="sec-head"><div class="kicker">Kind Words</div><h2 class="display">Testimonials.</h2></div>
+  <div class="quotes">
+    <div class="quote">
+      <blockquote>A placeholder quote highlighting Ying Sheng's rigor, initiative, and how he raises the standard of everyone around him.</blockquote>
+      <div class="who">Prof. Milias</div>
+      <div class="role">Shanghai Jiao Tong University</div>
+      <span class="pending">Quote pending</span>
+    </div>
+    <div class="quote">
+      <blockquote>A placeholder quote on his teaching contribution and leadership across courses and student competitions.</blockquote>
+      <div class="who">Prof. He Yulian (何玉莲)</div>
+      <div class="role">Shanghai Jiao Tong University</div>
+      <span class="pending">Quote pending</span>
+    </div>
+  </div>
+</div></section>
+
+<section id="awards"><div class="wrap">
+  <div class="sec-head"><div class="kicker">Recognition</div><h2 class="display">Awards.</h2></div>
+  <div class="award"><div class="inner">
+    <div class="t">🏆</div>
+    <div>
+      <h3>1st Prize — China's 13th National Marine Vehicle Design Competition</h3>
+      <p>Led design of an amphibious tracked vehicle for cave exploration and flood rescue — top among 230 regional champions, with 3 working prototypes delivered.</p>
+    </div>
+    <div class="yr">09/23 – 08/24</div>
+  </div></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="sec-head"><div class="kicker">Background</div><h2 class="display">Education.</h2></div>
+  <div class="edu">
+    <div class="ecard">
+      <div class="yr">09/22 – Present</div>
+      <h3>Shanghai Jiao Tong University</h3>
+      <p>B.S. Electrical &amp; Computer Engineering · Minor in Data Science · Shanghai, China</p>
+    </div>
+    <div class="ecard">
+      <div class="yr">08/22 – 12/22</div>
+      <h3>Nanyang Technological University</h3>
+      <p>Electrical &amp; Computer Engineering · Student Exchange Program · Singapore</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div class="glow"></div>
+    <h2 class="display">Let's build something.</h2>
+    <p class="sub">Open to product, engineering, and research conversations.</p>
+    <div class="channels">
+      <a class="chip" href="https://github.com/yslee1106" target="_blank">⌨ <b>GitHub</b> /yslee1106</a>
+      <a class="chip" href="https://linkedin.com/in/leeyingsheng" target="_blank">in <b>LinkedIn</b> /leeyingsheng</a>
+      <a class="chip" href="mailto:yslee040611@gmail.com">✉ <b>Email</b></a>
+      <a class="chip" href="tel:+8615000967750">☎ <b>(+86) 15000967750</b></a>
+      <span class="chip">💬 <b>WeChat</b> pending</span>
+    </div>
+  </div>
+</div></section>
+
+<footer>© 2026 Lee Ying Sheng · Modern Bold mockup</footer>
+</body>
+</html>

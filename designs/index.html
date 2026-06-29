@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Website — Choose a Design Direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#0f1115;color:#e6e6e6;line-height:1.6;padding:64px 24px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto}
+  .head{text-align:center;margin-bottom:52px}
+  .head .ey{font-family:'JetBrains Mono';font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8AA17E;margin-bottom:14px}
+  .head h1{font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+  .head p{color:#9a9aa6;max-width:64ch;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{display:block;background:#171a21;border:1px solid #262a33;border-radius:16px;overflow:hidden;transition:.22s;color:inherit;text-decoration:none;position:relative}
+  .card:hover{transform:translateY(-5px);border-color:#8AA17E;box-shadow:0 16px 50px rgba(0,0,0,.4)}
+  .card.fav{border-color:#5A6B4E}
+  .fav-tag{position:absolute;top:14px;right:14px;z-index:2;font-family:'JetBrains Mono';font-size:11px;background:#5A6B4E;color:#fff;padding:4px 10px;border-radius:99px}
+  .swatch{height:128px;display:flex;align-items:center;justify-content:center;font-size:14px;position:relative;overflow:hidden}
+  .s1{background:#FAFAF8;color:#1A1A1A;font-family:'Inter'}.s1 .dot{background:#2F5BEA}
+  .s4{background:#F6F1E9;color:#2A2520;font-family:Georgia,serif}.s4 .dot{background:#B4552D}
+  .s5{background:#fff;color:#0F1A2E;font-family:'Inter';font-weight:700}.s5 .dot{background:#1D4ED8}
+  .s6{background:#FCFCFA;color:#1B1C1A;font-family:Georgia,serif;font-style:italic;font-size:20px}.s6 .dot{background:#5A6B4E}
+  .dot{position:absolute;top:16px;left:16px;width:13px;height:13px;border-radius:50%}
+  .body{padding:24px}
+  .num{font-family:'JetBrains Mono';font-size:12px;color:#7d8590;margin-bottom:8px}
+  .card h2{font-size:20px;font-weight:600;margin-bottom:8px}
+  .card p{color:#9a9aa6;font-size:14px;margin-bottom:16px}
+  .open{font-family:'JetBrains Mono';font-size:13px;color:#8AA17E;font-weight:500}
+  .archived{margin-top:48px;padding-top:28px;border-top:1px solid #262a33}
+  .archived .lbl{font-family:'JetBrains Mono';font-size:12px;color:#6c6c78;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+  .arow{display:flex;gap:14px;flex-wrap:wrap}
+  .achip{font-family:'JetBrains Mono';font-size:13px;color:#8a8a96;background:#13151a;border:1px solid #262a33;border-radius:8px;padding:9px 14px;text-decoration:none;transition:.18s}
+  .achip:hover{color:#c0c0cc;border-color:#3a3f4a}
+  .achip s{opacity:.7}
+  .note{margin-top:40px;text-align:center;color:#6c6c78;font-size:13px;font-family:'JetBrains Mono'}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div class="ey">Lee Ying Sheng · Personal Website</div>
+    <h1>Choose a design direction</h1>
+    <p>Four professional, editorial-leaning directions — all suitable for technical and non-technical audiences. Same content and sections, four different visual languages. Open each, compare, and pick one for the real build.</p>
+  </div>
+
+  <div class="grid">
+    <a class="card fav" href="01-editorial-minimal.html">
+      <span class="fav-tag">♥ you liked this</span>
+      <div class="swatch s1"><span class="dot"></span>Aa — Newsreader / Inter</div>
+      <div class="body">
+        <div class="num">01</div>
+        <h2>Editorial Minimal</h2>
+        <p>Off-white canvas, serif headlines, generous whitespace, one restrained blue accent. Calm, timeless, confident.</p>
+        <span class="open">Open mockup →</span>
+      </div>
+    </a>
+
+    <a class="card" href="04-warm-editorial.html">
+      <div class="swatch s4"><span class="dot"></span>Aa — Fraunces / Inter</div>
+      <div class="body">
+        <div class="num">04 · new</div>
+        <h2>Warm Editorial</h2>
+        <p>A warmer, humanist take on 01 — cream canvas, high-contrast serif, a refined terracotta accent. Magazine-like and approachable.</p>
+        <span class="open">Open mockup →</span>
+      </div>
+    </a>
+
+    <a class="card" href="05-professional-sans.html">
+      <div class="swatch s5"><span class="dot"></span>Aa — Inter (all sans)</div>
+      <div class="body">
+        <div class="num">05 · new</div>
+        <h2>Professional Sans</h2>
+        <p>Crisp white, navy text, a single professional blue. Structured grid, an "at-a-glance" panel. The safest, most corporate/consulting feel — ideal for non-technical roles.</p>
+        <span class="open">Open mockup →</span>
+      </div>
+    </a>
+
+    <a class="card" href="06-elegant-serif.html">
+      <div class="swatch s6"><span class="dot"></span>Aa — Cormorant Garamond</div>
+      <div class="body">
+        <div class="num">06 · new</div>
+        <h2>Elegant Serif</h2>
+        <p>Gallery-like, maximum whitespace, light Cormorant Garamond display, hairline rules and a quiet sage accent. Premium and understated.</p>
+        <span class="open">Open mockup →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="archived">
+    <div class="lbl">Archived — not pursued (per your feedback)</div>
+    <div class="arow">
+      <a class="achip" href="02-modern-bold.html"><s>02 Modern Bold</s> — too unprofessional</a>
+      <a class="achip" href="03-technical-terminal.html"><s>03 Technical / Terminal</s> — too coding/technical</a>
+    </div>
+  </div>
+
+  <div class="note">// open this folder's index.html in a browser · all options use your real LaowaiCentral screenshots</div>
+</div>
+</body>
+</html>
