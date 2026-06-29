@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   basePath: '/personal-website',
-  images: { unoptimized: true },
+  images: { loaderFile: './lib/imageLoader.ts' },
 };
 
 export default nextConfig;
