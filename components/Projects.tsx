@@ -1,17 +1,21 @@
+'use client'
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
-import { projects, type Project } from "@/lib/content";
+import { useLang } from "@/lib/language-context";
+import { translations } from "@/lib/i18n";
+import type { Project } from "@/lib/content";
 
 function ProjectMedia({ project }: { project: Project }) {
   if (project.image) {
     return (
-      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border border-line bg-card">
+      <div className="overflow-hidden border border-line bg-card">
         <Image
           src={project.image}
           alt={project.imageAlt ?? project.title}
-          fill
+          width={1200}
+          height={900}
           sizes="(max-width: 740px) 100vw, 50vw"
-          className="object-cover object-top"
+          className="w-full h-auto"
         />
       </div>
     );
@@ -25,12 +29,15 @@ function ProjectMedia({ project }: { project: Project }) {
 }
 
 export default function Projects() {
+  const { lang } = useLang();
+  const t = translations[lang];
+
   return (
     <section id="projects" className="px-9 py-28">
       <div className="mx-auto max-w-site">
-        <SectionHeading eyebrow="Selected Work" title="Featured Projects" />
+        <SectionHeading eyebrow={t.ui.projects.eyebrow} title={t.ui.projects.title} />
         <div className="grid gap-20">
-          {projects.map((project, i) => (
+          {t.projects.map((project, i) => (
             <article
               key={project.title}
               className="grid items-center gap-7 md:grid-cols-2 md:gap-14"

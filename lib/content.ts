@@ -34,27 +34,29 @@ export const projects: Project[] = [
     role: "Co-founder",
     period: "04/26 – Present",
     description:
-      "An aggregation engine pulling event data from 50+ WeChat Official Accounts, with LLM-powered spam filtering, categorization, and multilingual summaries. A newsletter via Aliyun Direct Mail and built-in analytics for retention, CTR, and conversions.",
+      "LaowaiCentral is an events platform built for international students at SJTU — aggregating listings from 50+ WeChat Official Accounts and surfacing them with LLM-powered spam filtering, smart categorization, and multilingual summaries. The platform is live at laowaicentral.com, delivering a weekly newsletter to subscribers and tracking engagement through built-in retention, CTR, and conversion analytics.",
     href: "https://laowaicentral.com",
     hrefLabel: "laowaicentral.com",
     image: "/laowaicentral.png",
     imageAlt: "LaowaiCentral events platform screenshot",
   },
   {
-    title: "Disposal of Electronic Cigarettes — Zhejiang Huayou Cobalt",
+    title: "Research on the Disposal of Electronic Cigarettes",
     role: "Team Leader",
     period: "05/26 – Present",
     description:
-      "Leading a 5-person research team building a safer, more efficient e-cigarette disposal system. Aligned requirements with Huayou stakeholders, prioritized a feasibility report and implementation plan, and am validating the detection and dismantling systems through experimental prototyping.",
-    placeholder: "Concept diagram — coming soon",
+      "A commissioned research initiative with Zhejiang Huayou Cobalt to design a safer, more efficient system for detecting and dismantling end-of-life e-cigarettes. A 5-person team is currently completing a feasibility report and validating the detection and dismantling pipeline through experimental prototyping.",
+    image: "/ecig-diagram.jpg",
+    imageAlt: "E-cigarette disposal concept diagram",
   },
   {
     title: "Quantization-Aware Compression of Vision-Language Models",
     role: "Researcher · Computer Vision Final Project",
     period: "",
     description:
-      "Investigated how aggressively CLIP (a 150M-parameter vision-language model) can be compressed for edge deployment. Applied 8-bit and 4-bit post-training quantization, ran per-layer sensitivity analysis, and designed a mixed-precision strategy recovering most accuracy at ~4–8× smaller size. Benchmarked on CIFAR-100 and Flickr30k.",
-    placeholder: "CLIP compression pipeline — figure pending",
+      "An exploration of how far CLIP — a 150M-parameter vision-language model — can be compressed for edge deployment without meaningful accuracy loss. Using 8-bit and 4-bit post-training quantization with per-layer sensitivity analysis, a mixed-precision strategy was developed that recovers most of the model's accuracy at 4–8× smaller size, benchmarked on CIFAR-100 and Flickr30k.",
+    image: "/clip-compression.jpg",
+    imageAlt: "CLIP quantization pipeline",
   },
 ];
 
@@ -87,6 +89,7 @@ export const award = {
   description:
     "Led the design of an amphibious tracked vehicle for cave exploration and flood rescue, ranking top among 230 regional champions and delivering 3 working prototypes.",
   period: "09/23 – 08/24",
+  images: ["/award-1.jpg", "/award-2.jpg"],
 };
 
 export type Education = {
@@ -129,13 +132,24 @@ export const contacts: Contact[] = [
     href: "mailto:yslee040611@gmail.com",
   },
   { label: "Phone", value: "(+86) 15000967750", href: "tel:+8615000967750" },
-  { label: "WeChat", value: "ID / QR pending" },
+  { label: "WeChat", value: "yslee040611" },
 ];
 
 export const navLinks = [
   { label: "Projects", href: "#projects" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Awards", href: "#awards" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const ui = {
+  hero: { viewWorks: "View Works" },
+  projects: { eyebrow: "Selected Work", title: "Featured Projects" },
+  awards: { eyebrow: "Recognition", title: "Awards" },
+  education: { eyebrow: "Academic Path", title: "Education" },
+  contact: {
+    heading: "Let's get",
+    headingItalic: "in touch.",
+    subheading: "Open to product, engineering, and research conversations.",
+  },
+};
