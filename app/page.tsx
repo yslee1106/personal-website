@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Awards from "@/components/Awards";
 import Education from "@/components/Education";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Rule from "@/components/Rule";
@@ -19,6 +20,8 @@ export default function Home() {
         <Awards />
         <Rule />
         <Education />
+        <Rule />
+        <Testimonials />
         <Rule />
         <Contact />
       </main>
