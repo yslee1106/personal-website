@@ -12,8 +12,8 @@ export const profile = {
 export type Resume = { label: string; href: string };
 
 export const resumes: Resume[] = [
-  { label: "Tech Resume", href: "/lee-ying-sheng-tech-resume.pdf" },
-  { label: "Non-technical Resume", href: "/lee-ying-sheng-resume.pdf" },
+  { label: "Tech Resume", href: "/personal-website/lee-ying-sheng-tech-resume.pdf" },
+  { label: "Non-technical Resume", href: "/personal-website/lee-ying-sheng-resume.pdf" },
 ];
 
 export type Project = {
