@@ -11,8 +11,8 @@ export const profile = {
 export type Resume = { label: string; href: string };
 
 export const resumes: Resume[] = [
-  { label: "技术简历", href: "/personal-website/lee-ying-sheng-tech-resume-zh.pdf" },
-  { label: "非技术简历", href: "/personal-website/lee-ying-sheng-resume-zh.pdf" },
+  { label: "技术简历", href: "/lee-ying-sheng-ai-resume-zh.pdf" },
+  { label: "非技术简历", href: "/lee-ying-sheng-pm-resume-zh.pdf" },
 ];
 
 export type Project = {
@@ -36,7 +36,7 @@ export const projects: Project[] = [
       "LaowaiCentral 是面向上交大国际学生的一站式活动资讯平台，汇聚超过 50 个微信公众号的内容，借助大模型完成垃圾内容过滤、智能分类与多语言摘要，统一推送给用户。平台目前已正式上线，通过阿里云 Direct Mail 定期向订阅用户推送活动周刊，并配有留存率、点击率与转化率等关键数据的内置分析功能。",
     href: "https://laowaicentral.com",
     hrefLabel: "laowaicentral.com",
-    image: "/laowaicentral.png",
+    image: "/laowaicentral-landing.png",
     imageAlt: "LaowaiCentral 活动平台截图",
   },
   {
@@ -63,10 +63,26 @@ export type Testimonial = {
   quote: string;
   name: string;
   affiliation: string;
+  relationship: string;
   pending?: boolean;
 };
 
-export const testimonials: Testimonial[] = [];
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "他对工程问题的洞察与解决能力令我印象深刻。在「可潜两栖履带艇」项目中，他全面负责总体技术规划，运用三维可视化建模方法，攻克了可控伸缩履带机构的关键技术难题，并搭建了一套能够在跨介质条件下稳定运行的无线通信系统架构。面对技术瓶颈，他展现出极强的钻研精神与自驱力，能够从总体层面审视工程问题，并提出合理可行的解决方案，是一位不可多得的复合型工程人才。",
+    name: "Prof. 陈炉云",
+    affiliation: "上海交通大学",
+    relationship: "项目指导老师",
+  },
+  {
+    quote:
+      "颖晟曾担任我多门课程的助教，所涉领域从工科横跨至商科。他的敬业精神、主动性与创造力始终令我叹服，从未让我失望。他在工作中永远全力以赴，是身边所有人学习的榜样。",
+    name: "Prof. Milias Liu",
+    affiliation: "上海交通大学",
+    relationship: "助教导师",
+  },
+];
 
 export const award = {
   title: "一等奖 — 第十三届全国海洋航行器设计与制作大赛",
@@ -113,6 +129,7 @@ export const navLinks = [
   { label: "项目", href: "#projects" },
   { label: "奖项", href: "#awards" },
   { label: "教育", href: "#education" },
+  { label: "推荐", href: "#testimonials" },
   { label: "联系", href: "#contact" },
 ];
 
@@ -121,6 +138,7 @@ export const ui = {
   projects: { eyebrow: "精选作品", title: "精选项目" },
   awards: { eyebrow: "所获奖项", title: "奖项" },
   education: { eyebrow: "学习经历", title: "教育背景" },
+  testimonials: { eyebrow: "他们的评价", title: "推荐语", pending: "引言待确认" },
   contact: {
     heading: "欢迎随时",
     headingItalic: "与我联系。",

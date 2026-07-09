@@ -14,8 +14,8 @@ export default function Hero() {
           <Image
             src="/lee-ying-sheng.jpg"
             alt="Lee Ying Sheng"
-            width={140}
-            height={140}
+            width={180}
+            height={180}
             className="rounded-full object-cover ring-1 ring-line"
             priority
           />
