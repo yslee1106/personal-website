@@ -6,7 +6,7 @@ export const profile = {
   firstName: "Lee Ying",
   lastName: "Sheng",
   eyebrow: "ECE · Shanghai Jiao Tong University",
-  bio: "Building across platforms, hardware, and AI — leading cross-functional teams from research to shipped product, and finding real user needs before writing a line of code.",
+  bio: "I build AI products across software and hardware, leading cross-functional teams from research to shipped product",
 };
 
 export type Resume = { label: string; href: string };
@@ -30,11 +30,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "LaowaiCentral — SJTU International Events Platform",
+    title: "LaowaiCentral — AI-Driven Events Platform",
     role: "Co-founder",
     period: "04/26 – Present",
     description:
-      "LaowaiCentral is an events platform built for international students at SJTU — aggregating listings from 50+ WeChat Official Accounts and surfacing them with LLM-powered spam filtering, smart categorization, and multilingual summaries. The platform is live at laowaicentral.com, delivering a weekly newsletter to subscribers and tracking engagement through built-in retention, CTR, and conversion analytics.",
+      "Co-founded and led engineering for an AI-powered events platform for international students at SJTU, growing it to 100+ users with 30% retention by automating content curation with 95% accuracy.",
     href: "https://laowaicentral.com",
     hrefLabel: "laowaicentral.com",
     image: "/laowaicentral-landing.png",
@@ -42,19 +42,19 @@ export const projects: Project[] = [
   },
   {
     title: "Research on the Disposal of Electronic Cigarettes",
-    role: "Team Leader",
+    role: "Technical Lead",
     period: "05/26 – Present",
     description:
-      "A commissioned research initiative with Zhejiang Huayou Cobalt to design a safer, more efficient system for detecting and dismantling end-of-life e-cigarettes. A 5-person team is currently completing a feasibility report and validating the detection and dismantling pipeline through experimental prototyping.",
+      "Leading a 5-person research team alongside engineers at Zhejiang Huayou Cobalt to design a safer way to detect and dismantle used e-cigarette batteries, delivering a feasibility report from scratch.",
     image: "/ecig-diagram.jpg",
     imageAlt: "E-cigarette disposal concept diagram",
   },
   {
     title: "Compression of Vision-Language Models",
-    role: "Researcher · Computer Vision Final Project",
+    role: "Deep Learning Researcher",
     period: "",
     description:
-      "An exploration of how far CLIP — a 150M-parameter vision-language model — can be compressed for edge deployment without meaningful accuracy loss. Using 8-bit and 4-bit post-training quantization with per-layer sensitivity analysis, a mixed-precision strategy was developed that recovers most of the model's accuracy at 4–8× smaller size, benchmarked on CIFAR-100 and Flickr30k.",
+      "Compressed CLIP, a 150M-parameter vision-language model, using mixed-precision quantization and retraining, shrinking it 46% while boosting accuracy from 21.8% to 74.8% on CIFAR-100 and Flickr30k benchmarks.",
     image: "/clip-compression.jpg",
     imageAlt: "CLIP quantization pipeline",
   },
@@ -75,16 +75,16 @@ export const testimonials: Testimonial[] = [
       "I was deeply impressed by his insight into engineering problems and his ability to solve them. In the \"Submersible Amphibious Tracked Vehicle\" project, he was fully responsible for the overall technical planning. He overcame key technical challenges in the controllable telescopic track mechanism by employing 3D visualization modeling and established a wireless communication system architecture capable of stable operation across different mediums (air and water). When facing technical bottlenecks, he demonstrated strong research spirit and self-drive. He has the ability to examine engineering problems from a holistic perspective and propose reasonable, feasible solutions, making him a rare and valuable composite engineering talent.",
     quoteCn:
       "Ying Sheng 的问题解决能力令我印象最为深刻。面对技术瓶颈，他从不急于寻找捷径，而是习惯先退一步，彻底厘清问题的根源，随后再带着更完善的方案回归。在项目中，他全面负责了 SolidWorks 建模、3D 打印以及可伸缩履带机构的开发，并亲手设计了一套能在水下稳定运行的无线通信系统。",
-    name: "Prof. 陈炉云",
+    name: "Professor 陈炉云",
     affiliation: "Shanghai Jiao Tong University",
-    relationship: "Project Supervisor",
+    relationship: "Faculty Member, Department of Naval Architecture and Ocean Engineering",
   },
   {
     quote:
       "Ying Sheng has been my TA for several courses, spanning a wide range from Engineering to Business. He never failed to amaze me with his dedication, initiative, and creativity. Always giving 100% in his work, Ying Sheng sets a great example for everyone around him.",
-    name: "Prof. Milias Liu",
+    name: "Dr. Milias Liu",
     affiliation: "Shanghai Jiao Tong University",
-    relationship: "Teaching Assistant Supervisor",
+    relationship: "Assistant Teaching Professor, SJTU Global College",
   },
 ];
 
