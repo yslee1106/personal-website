@@ -85,7 +85,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const award = {
-  title: "一等奖 — 第十三届全国海洋航行器设计与制作大赛",
+  badge: "一等奖",
+  competition: "第十三届全国海洋航行器设计与制作大赛",
   description:
     "主持设计了一款兼顾洞穴探测与洪涝救援的两栖履带车，从全国 230 支区域冠军队伍中脱颖而出，最终完成 3 台可运行原型的交付。",
   period: "2023年9月 – 2024年8月",

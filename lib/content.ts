@@ -89,7 +89,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const award = {
-  title: "1st Prize — China's 13th National Marine Vehicle Design Competition",
+  badge: "1st Prize",
+  competition: "China's 13th National Marine Vehicle Design Competition",
   description:
     "Led the design of an amphibious tracked vehicle for cave exploration and flood rescue, ranking top among 230 regional champions and delivering 3 working prototypes.",
   period: "09/23 – 08/24",
