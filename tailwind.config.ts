@@ -24,6 +24,12 @@ const config: Config = {
         heroPanel: "#FBF6EF",
         heroBorder: "#E3D9C9",
         heroHover: "#F0E4D2",
+        projectsBg: "#211E1A",
+        projectsInk: "#FBF6EF",
+        projectsMuted: "#C9C4B8",
+        projectsAccent: "#D68A5C",
+        projectsBorder: "rgba(251,246,239,.14)",
+        projectsPlaceholder: "#171512",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],

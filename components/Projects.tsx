@@ -1,70 +1,70 @@
 'use client'
 import Image from "next/image";
-import SectionHeading from "./SectionHeading";
 import { useLang } from "@/lib/language-context";
 import { translations } from "@/lib/i18n";
-import type { Project } from "@/lib/content";
-
-function ProjectMedia({ project }: { project: Project }) {
-  if (project.image) {
-    return (
-      <div className="overflow-hidden border border-line bg-card">
-        <Image
-          src={project.image}
-          alt={project.imageAlt ?? project.title}
-          width={1200}
-          height={900}
-          sizes="(max-width: 740px) 100vw, 50vw"
-          className="w-full h-auto"
-        />
-      </div>
-    );
-  }
-  return (
-    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 border border-line bg-accent-soft p-6 text-center text-[13px] tracking-[0.04em] text-muted">
-      <span className="text-3xl">◇</span>
-      <span>{project.placeholder}</span>
-    </div>
-  );
-}
 
 export default function Projects() {
   const { lang } = useLang();
   const t = translations[lang];
 
   return (
-    <section id="projects" className="px-9 py-28">
-      <div className="mx-auto max-w-site">
-        <SectionHeading eyebrow={t.ui.projects.eyebrow} title={t.ui.projects.title} />
-        <div className="grid gap-20">
+    <section id="projects" className="bg-projectsBg px-6 py-16 md:px-16 md:py-[88px]">
+      <div className="mx-auto max-w-[1100px]">
+        <div className="mb-16 text-center">
+          <div className="mb-3.5 text-xs font-semibold uppercase tracking-[0.24em] text-projectsAccent">
+            {t.ui.projects.eyebrow}
+          </div>
+          <h2 className="font-display text-[46px] font-medium leading-[1.1] text-projectsInk">
+            {t.ui.projects.title}
+          </h2>
+        </div>
+
+        <div>
           {t.projects.map((project, i) => (
             <article
               key={project.title}
-              className="grid items-center gap-7 md:grid-cols-2 md:gap-14"
+              className={`border-b border-projectsBorder ${i === 0 ? "border-t" : ""}`}
             >
-              <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                <ProjectMedia project={project} />
-              </div>
-              <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <div className="mb-4 text-xs uppercase tracking-[0.16em] text-accent">
-                  {project.role}
-                  {project.period ? ` · ${project.period}` : ""}
-                </div>
-                <h3 className="mb-4 font-serif text-[34px] font-medium leading-tight">
+              <div className="flex items-baseline gap-4 py-7">
+                <span className="font-display text-[15px] font-medium text-projectsAccent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="flex-1 font-display text-[27px] font-medium leading-[1.25] text-projectsInk">
                   {project.title}
                 </h3>
-                <p className="mb-5 font-light text-muted">
-                  {project.description}
-                </p>
-                {project.href && (
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border-b border-accent pb-0.5 text-[13px] uppercase tracking-[0.06em] text-accent transition-opacity hover:opacity-70"
-                  >
-                    {project.hrefLabel ?? "Visit"}
-                  </a>
+              </div>
+
+              <div className="grid grid-cols-1 gap-10 pb-10 pt-1 md:grid-cols-[1fr_1.15fr] md:items-start">
+                <div>
+                  <div className="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-projectsAccent">
+                    {project.role}
+                  </div>
+                  <p className="mb-[18px] text-[15.5px] leading-[1.7] text-projectsMuted">
+                    {project.description}
+                  </p>
+                  {project.href && (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-b border-projectsAccent pb-0.5 text-xs font-medium uppercase tracking-[0.05em] text-projectsAccent transition-opacity hover:opacity-70"
+                    >
+                      {project.hrefLabel}
+                    </a>
+                  )}
+                </div>
+
+                {project.image && (
+                  <div className="overflow-hidden rounded-[6px] bg-projectsPlaceholder">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt ?? project.title}
+                      width={1200}
+                      height={900}
+                      sizes="(max-width: 767px) 100vw, 50vw"
+                      className="h-auto w-full object-cover"
+                    />
+                  </div>
                 )}
               </div>
             </article>
