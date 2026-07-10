@@ -124,25 +124,28 @@ export const education: Education[] = [
 ];
 
 export type Contact = {
+  id: string;
   label: string;
   value: string;
   href?: string;
 };
 
 export const contacts: Contact[] = [
-  { label: "GitHub", value: "/yslee1106", href: "https://github.com/yslee1106" },
   {
-    label: "LinkedIn",
-    value: "/leeyingsheng",
-    href: "https://linkedin.com/in/leeyingsheng",
-  },
-  {
+    id: "email",
     label: "Email",
     value: "yslee040611@gmail.com",
     href: "mailto:yslee040611@gmail.com",
   },
-  { label: "Phone", value: "(+86) 15000967750", href: "tel:+8615000967750" },
-  { label: "WeChat", value: "yslee040611" },
+  { id: "phone", label: "Phone", value: "(+86) 15000967750", href: "tel:+8615000967750" },
+  { id: "github", label: "GitHub", value: "/yslee1106", href: "https://github.com/yslee1106" },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    value: "/leeyingsheng",
+    href: "https://linkedin.com/in/leeyingsheng",
+  },
+  { id: "wechat", label: "WeChat", value: "yslee040611" },
 ];
 
 export const navLinks = [
@@ -160,6 +163,7 @@ export const ui = {
   education: { eyebrow: "Academic Path", title: "Education" },
   testimonials: { eyebrow: "In Their Words", title: "Testimonials", pending: "Quote pending" },
   contact: {
+    eyebrow: "In Touch",
     heading: "Let's get",
     headingItalic: "in touch.",
     subheading: "Open to product, engineering, and research conversations.",

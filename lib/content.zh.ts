@@ -118,17 +118,18 @@ export const education: Education[] = [
 ];
 
 export type Contact = {
+  id: string;
   label: string;
   value: string;
   href?: string;
 };
 
 export const contacts: Contact[] = [
-  { label: "GitHub", value: "/yslee1106", href: "https://github.com/yslee1106" },
-  { label: "领英", value: "/leeyingsheng", href: "https://linkedin.com/in/leeyingsheng" },
-  { label: "邮箱", value: "yslee040611@gmail.com", href: "mailto:yslee040611@gmail.com" },
-  { label: "电话", value: "(+86) 15000967750", href: "tel:+8615000967750" },
-  { label: "微信", value: "yslee040611" },
+  { id: "email", label: "邮箱", value: "yslee040611@gmail.com", href: "mailto:yslee040611@gmail.com" },
+  { id: "phone", label: "电话", value: "(+86) 15000967750", href: "tel:+8615000967750" },
+  { id: "github", label: "GitHub", value: "/yslee1106", href: "https://github.com/yslee1106" },
+  { id: "linkedin", label: "领英", value: "/leeyingsheng", href: "https://linkedin.com/in/leeyingsheng" },
+  { id: "wechat", label: "微信", value: "yslee040611" },
 ];
 
 export const navLinks = [
@@ -146,6 +147,7 @@ export const ui = {
   education: { eyebrow: "学习经历", title: "教育背景" },
   testimonials: { eyebrow: "他们的评价", title: "推荐语", pending: "引言待确认" },
   contact: {
+    eyebrow: "保持联系",
     heading: "欢迎随时",
     headingItalic: "与我联系。",
     subheading: "无论是产品、工程还是研究，都欢迎随时交流。",
