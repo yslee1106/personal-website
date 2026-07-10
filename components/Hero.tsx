@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "@/lib/language-context";
 import { translations } from "@/lib/i18n";
+import { basePath } from "@/lib/basePath";
 
 export default function Hero() {
   const { lang } = useLang();
@@ -65,7 +66,7 @@ export default function Hero() {
                   {t.resumes.map((resume) => (
                     <a
                       key={resume.href}
-                      href={resume.href}
+                      href={`${basePath}${resume.href}`}
                       download
                       className="block px-5 py-3 text-[13px] font-medium text-heroInk transition-colors duration-150 hover:bg-heroHover"
                     >
