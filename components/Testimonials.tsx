@@ -66,7 +66,9 @@ export default function Testimonials() {
                 {current.name}
               </div>
               <div className="mt-[5px] text-xs leading-[1.4] text-projectsAccent">
-                {current.relationship} · {current.affiliation}
+                {current.relationship}
+                <br />
+                {current.affiliation}
               </div>
               {current.pending && (
                 <div className="mt-3 text-[10px] uppercase tracking-[0.14em] text-projectsAccent">

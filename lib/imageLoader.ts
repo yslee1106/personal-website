@@ -1,3 +1,5 @@
+import { basePath } from "./basePath";
+
 export default function imageLoader({ src }: { src: string }) {
-  return `/personal-website${src}`;
+  return `${basePath}${src}`;
 }

@@ -5,7 +5,7 @@ export const profile = {
   firstName: "Lee Ying",
   lastName: "Sheng",
   eyebrow: "电子与计算机工程 · 上海交通大学",
-  bio: "在软硬件与人工智能的交叉地带探索与创造，擅长带领跨职能团队将研究推向实际落地，始终坚持在动手开发之前先弄清楚用户的真实需求。",
+  bio: "我打造跨越软硬件的人工智能产品，带领跨职能团队将研究成果转化为落地产品。",
 };
 
 export type Resume = { label: string; href: string };
@@ -29,11 +29,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "LaowaiCentral — 上交大国际活动资讯平台",
+    title: "LaowaiCentral — AI 驱动的活动资讯平台",
     role: "联合创始人",
     period: "2026年4月 – 至今",
     description:
-      "LaowaiCentral 是面向上交大国际学生的一站式活动资讯平台，汇聚超过 50 个微信公众号的内容，借助大模型完成垃圾内容过滤、智能分类与多语言摘要，统一推送给用户。平台目前已正式上线，通过阿里云 Direct Mail 定期向订阅用户推送活动周刊，并配有留存率、点击率与转化率等关键数据的内置分析功能。",
+      "联合创立该平台并主导技术研发，面向上交大国际学生打造 AI 驱动的活动资讯平台，通过以 95% 准确率实现内容筛选自动化，将用户规模增长至 100+ 人，留存率达到 30%。",
     href: "https://laowaicentral.com",
     hrefLabel: "laowaicentral.com",
     image: "/laowaicentral-landing.png",
@@ -41,19 +41,19 @@ export const projects: Project[] = [
   },
   {
     title: "废旧电子烟处置研究",
-    role: "团队负责人",
+    role: "技术负责人",
     period: "2026年5月 – 至今",
     description:
-      "由浙江华友钴业委托的产学研课题，目标是开发一套更安全、更高效的废旧电子烟检测与拆解方案。团队五人，目前正推进可行性研究报告的撰写，并通过实验原型对检测与拆解流程进行实测验证。",
+      "与浙江华友钴业的工程师合作，带领一支 5 人研究团队设计更安全的废旧电子烟电池检测与拆解方案，从零到一完成可行性研究报告。",
     image: "/ecig-diagram.jpg",
     imageAlt: "电子烟处置概念图",
   },
   {
     title: "面向端侧部署的视觉语言模型量化压缩研究",
-    role: "研究员 · 计算机视觉课程项目",
+    role: "深度学习研究员",
     period: "",
     description:
-      "研究在不显著损失精度的前提下，CLIP（1.5 亿参数的视觉语言模型）可被压缩至何种程度，以满足端侧推理需求。结合逐层灵敏度分析与 8 比特、4 比特训练后量化，提出混合精度压缩策略，在 CIFAR-100 与 Flickr30k 基准测试中实现 4–8 倍的模型体积压缩，同时保留绝大部分精度。",
+      "使用混合精度量化与再训练技术压缩 CLIP（一个 1.5 亿参数的视觉语言模型），将模型体积缩小 46%，同时在 CIFAR-100 与 Flickr30k 基准测试中将准确率从 21.8% 提升至 74.8%。",
     image: "/clip-compression.jpg",
     imageAlt: "CLIP 量化压缩流程图",
   },
@@ -71,16 +71,16 @@ export const testimonials: Testimonial[] = [
   {
     quote:
       "他对工程问题的洞察与解决能力令我印象深刻。在「可潜两栖履带艇」项目中，他全面负责总体技术规划，运用三维可视化建模方法，攻克了可控伸缩履带机构的关键技术难题，并搭建了一套能够在跨介质条件下稳定运行的无线通信系统架构。面对技术瓶颈，他展现出极强的钻研精神与自驱力，能够从总体层面审视工程问题，并提出合理可行的解决方案，是一位不可多得的复合型工程人才。",
-    name: "Prof. 陈炉云",
+    name: "Professor 陈炉云",
     affiliation: "上海交通大学",
-    relationship: "项目指导老师",
+    relationship: "船舶与海洋工程系教师",
   },
   {
     quote:
       "颖晟曾担任我多门课程的助教，所涉领域从工科横跨至商科。他的敬业精神、主动性与创造力始终令我叹服，从未让我失望。他在工作中永远全力以赴，是身边所有人学习的榜样。",
-    name: "Prof. Milias Liu",
+    name: "Professor Milias Liu",
     affiliation: "上海交通大学",
-    relationship: "助教导师",
+    relationship: "助理教学教授，上海交通大学浦江国际学院",
   },
 ];
 
