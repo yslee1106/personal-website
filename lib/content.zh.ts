@@ -97,18 +97,23 @@ export type Education = {
   school: string;
   detail: string;
   period: string;
+  logo: string;
+  logoScale?: 82;
 };
 
 export const education: Education[] = [
   {
     school: "上海交通大学",
     detail: "电子与计算机工程学士 · 数据科学辅修 · 上海",
-    period: "2022年9月 – 至今",
+    period: "2022年9月 – 2026年8月",
+    logo: "/sjtu-logo.png",
   },
   {
     school: "南洋理工大学",
     detail: "电子与计算机工程 · 交换生 · 新加坡",
     period: "2022年8月 – 2022年12月",
+    logo: "/ntu-logo.png",
+    logoScale: 82,
   },
 ];
 

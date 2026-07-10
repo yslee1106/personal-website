@@ -101,6 +101,8 @@ export type Education = {
   school: string;
   detail: string;
   period: string;
+  logo: string;
+  logoScale?: 82;
 };
 
 export const education: Education[] = [
@@ -108,13 +110,16 @@ export const education: Education[] = [
     school: "Shanghai Jiao Tong University",
     detail:
       "B.S. Electrical & Computer Engineering · Minor in Data Science · Shanghai, China",
-    period: "09/22 – Present",
+    period: "09/22 – 08/26",
+    logo: "/sjtu-logo.png",
   },
   {
     school: "Nanyang Technological University",
     detail:
       "Electrical & Computer Engineering · Student Exchange Program · Singapore",
     period: "08/22 – 12/22",
+    logo: "/ntu-logo.png",
+    logoScale: 82,
   },
 ];
 
