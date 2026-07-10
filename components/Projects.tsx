@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section id="projects" className="bg-projectsBg px-6 py-16 md:px-16 md:py-[88px]">
       <div className="mx-auto max-w-[1100px]">
-        <div className="mb-16 text-center">
+        <div className="mb-16">
           <div className="mb-3.5 text-xs font-semibold uppercase tracking-[0.24em] text-projectsAccent">
             {t.ui.projects.eyebrow}
           </div>
@@ -25,17 +25,16 @@ export default function Projects() {
               key={project.title}
               className={`border-b border-projectsBorder ${i === 0 ? "border-t" : ""}`}
             >
-              <div className="flex items-baseline gap-4 py-7">
-                <span className="font-display text-[15px] font-medium text-projectsAccent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="flex-1 font-display text-[27px] font-medium leading-[1.25] text-projectsInk">
-                  {project.title}
-                </h3>
-              </div>
-
-              <div className="grid grid-cols-1 gap-10 pb-10 pt-1 md:grid-cols-[1fr_1.15fr] md:items-start">
+              <div className="grid grid-cols-1 items-center gap-10 pb-10 pt-7 md:grid-cols-[1fr_1.15fr]">
                 <div>
+                  <div className="mb-[18px] flex items-baseline gap-4">
+                    <span className="font-display text-[15px] font-medium text-projectsAccent">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-[27px] font-medium leading-[1.25] text-projectsInk">
+                      {project.title}
+                    </h3>
+                  </div>
                   <div className="mb-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-projectsAccent">
                     {project.role}
                   </div>

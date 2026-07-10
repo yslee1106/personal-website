@@ -50,7 +50,7 @@ export const projects: Project[] = [
     imageAlt: "E-cigarette disposal concept diagram",
   },
   {
-    title: "Quantization-Aware Compression of Vision-Language Models",
+    title: "Compression of Vision-Language Models",
     role: "Researcher · Computer Vision Final Project",
     period: "",
     description:
