@@ -134,7 +134,7 @@ export const navLinks = [
 ];
 
 export const ui = {
-  hero: { viewWorks: "查看作品" },
+  hero: { viewWorks: "查看作品", resume: "简历" },
   projects: { eyebrow: "精选作品", title: "精选项目" },
   awards: { eyebrow: "所获奖项", title: "奖项" },
   education: { eyebrow: "学习经历", title: "教育背景" },

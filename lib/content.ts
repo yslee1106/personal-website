@@ -148,7 +148,7 @@ export const navLinks = [
 ];
 
 export const ui = {
-  hero: { viewWorks: "View Works" },
+  hero: { viewWorks: "View Works", resume: "Resume" },
   projects: { eyebrow: "Selected Work", title: "Featured Projects" },
   awards: { eyebrow: "Recognition", title: "Awards" },
   education: { eyebrow: "Academic Path", title: "Education" },
