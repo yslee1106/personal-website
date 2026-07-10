@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter, Fraunces } from "next/font/google";
 import { LanguageProvider } from "@/lib/language-context";
 import "./globals.css";
 
@@ -15,6 +15,14 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["normal"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -60,7 +68,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable} ${fraunces.variable}`}>
       <body className="font-sans antialiased">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
